@@ -1,0 +1,2 @@
+# Load the Docker Compose configuration
+docker_compose('docker-compose.yml')
