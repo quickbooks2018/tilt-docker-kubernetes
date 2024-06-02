@@ -1,5 +1,7 @@
 # tilt docker kubernetes
 
+- Concept https://www.youtube.com/watch?v=JRc967vAkGM
+
 - https://tilt.dev/
 
 - Install Tilt:
