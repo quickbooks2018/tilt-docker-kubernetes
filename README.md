@@ -95,3 +95,19 @@ helm -n flask-app upgrade --install flask-app --create-namespace ./charts/flask-
 ```bash
 tilt up
 ```
+
+- kubernetes tilt file
+```tilt
+# Allows deploying to specific Kubernetes contexts
+allow_k8s_contexts('gke_playground-s-11-5ef9968b_us-central1-c_cluster-1')
+
+# Builds the Docker image and tags it appropriately
+docker_build('chasim1982/flask-app', '.', dockerfile='./Dockerfile')
+
+# Deploys the application using Helm
+k8s_yaml(helm('./charts/flask-app', namespace='flask-app'))
+
+
+# Set up port forwarding
+k8s_resource('flask-app', port_forwards='5000:5000')
+```
