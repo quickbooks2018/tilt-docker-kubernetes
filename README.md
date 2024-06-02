@@ -35,22 +35,31 @@ tilt up
 
 - kubernetes project structure
 ```bash
-flask-app/
-├── app.py
-├── Dockerfile
-├── requirements.txt
-├── Tiltfile
-└── charts/
-    └── flask-app/
-        ├── Chart.yaml
-        ├── values.yaml
-        ├── .helmignore
-        ├── templates/
-        │   ├── deployment.yaml
-        │   ├── service.yaml
-        │   ├── ingress.yaml
-        │   └── ...
-        └── charts/
+kubernetes git:(main) ✗ pwd
+/mnt/tilt-docker-kubernetes/kubernetes
+
+➜  kubernetes git:(main) ✗ tree
+.
+└── flask-app
+    ├── app.py
+    ├── charts
+    │   └── flask-app
+    │       ├── charts
+    │       ├── Chart.yaml
+    │       ├── templates
+    │       │   ├── deployment.yaml
+    │       │   ├── _helpers.tpl
+    │       │   ├── hpa.yaml
+    │       │   ├── ingress.yaml
+    │       │   ├── NOTES.txt
+    │       │   ├── serviceaccount.yaml
+    │       │   └── service.yaml
+    │       └── values.yaml
+    ├── Dockerfile
+    ├── requirements.txt
+    └── Tiltfile
+
+5 directories, 13 files
 ```
 
 - private registry secrets, I am using dockerhub
