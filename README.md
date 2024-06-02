@@ -67,7 +67,7 @@ kubernetes git:(main) ✗ pwd
 kubectl create ns flask-app
 kubectl create secret docker-registry docker-registry \
   --docker-server=https://index.docker.io/v1/ \
-  --docker-username=dockerhub id \
+  --docker-username=dockerhub-id \
   --docker-password=token \
   --docker-email=your-email \
   --namespace=flask-app
