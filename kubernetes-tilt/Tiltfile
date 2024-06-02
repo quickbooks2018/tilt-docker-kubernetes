@@ -5,8 +5,8 @@ allow_k8s_contexts('gke_playground-s-11-5ef9968b_us-central1-c_cluster-1')
 docker_build('chasim1982/flask-app', '.', dockerfile='./Dockerfile')
 
 # Deploys the application using Helm
-k8s_yaml(helm('./charts/flask-app', namespace='flask-app'))
+k8s_yaml(helm('./charts/flask-app', namespace='test-namespace')) # Note: I used test-namespace as actual app keep running on flask-app namespace, make sure to copy secrets from flask-app to test-namespace
 
 
-# Set up port forwarding
+# Set up port forwarding # This can be list of ports, so simply use []
 k8s_resource('flask-app', port_forwards='5000:5000')
