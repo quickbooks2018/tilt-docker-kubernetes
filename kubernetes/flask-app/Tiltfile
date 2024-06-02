@@ -8,5 +8,5 @@ docker_build('chasim1982/flask-app', '.', dockerfile='./Dockerfile')
 k8s_yaml(helm('./charts/flask-app', namespace='flask-app'))
 
 
-# Set up port forwarding
+# Set up port forwarding # This can be list of ports, so simply use []
 k8s_resource('flask-app', port_forwards='5000:5000')
